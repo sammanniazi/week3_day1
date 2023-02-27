@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Current Day and Time</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+    <div class="container py-5 mt-5">
+        <h1 class="text-align-center mt-4">Current date and time</h1>
+        <p class="mt-5 " id="day"></p>
+
+        <p id="datetime"></p>
+        
+      
+
+    </div>
+
+    <script>
+      // herE i get the current date object
+      const now = new Date();
+
+      //here i  get the current day of the week using the toLocaleDateString() method
+      const dayOfWeek = now.toLocaleDateString('en-US', { weekday: 'long' });
+
+      // here i get current time using the toLocaleTimeString() method
+      const timeString = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+
+      // here  i create a string with the current day and time
+      const currentday = `Today is ${dayOfWeek}. `;
+      const datetimeString =`Current time is ${timeString}.`
+
+     
+      const datetimeElement = document.getElementById('datetime');
+      const dayElement=document.getElementById("day")
+
+      // set the innerHTML property of the paragraph element to the current day and time string
+      datetimeElement.innerHTML = datetimeString;
+      dayElement.innerHTML=currentday;
+    </script>
+  </body>
+</html>

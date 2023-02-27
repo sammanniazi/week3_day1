@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compare Objects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container py-5 mt-5">
+        <h1 class="text-align-center mt-4">Unique values </h1>
+        <p id="unique"></p>
+
+    </div>
+    
+
+    <script>
+      
+      function filterNonUnique(arr) {
+  return arr.filter((value, index, array) => array.indexOf(value) === array.lastIndexOf(value));
+}
+const arr = [1, 2, 3, 3, 4, 4, 5];
+const filteredArr = filterNonUnique(arr);
+console.log(filteredArr); 
+
+
+
+document.getElementById('unique').innerHTML =  filteredArr;
+
+    </script>
+  </body>
+</html>
